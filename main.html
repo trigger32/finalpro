@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planner</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="indexx.css">
+    <script type="text/javascript" src="myscripts.js">
+
+    </script>
+
+</head>
+<body>
+<div id="header">
+<h1 id= "taskhead">Welcome to the Task Page!</h1>
+</div>
+
+  <div id="sidebar">
+
+<button id="side" onclick="taskmaster()">Task Page</button>
+<br>
+<button id="side" onclick="planner()">Planning Page</button>
+<br>
+<button id="side" onclick="signout()">Sign Out</button>
+<br>
+  </div>
+
+
+<div id="main">
+
+
+    <div class="card" id="cardd">
+        <h3 class="card-header" id="monthAndYear"></h3>
+        <table class="table table-bordered table-responsive-sm" id="calendar">
+            <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+
+            <tbody id="calendar-body">
+
+            </tbody>
+        </table>
+
+        <div class="form-inline"id ="hude">
+
+
+        </div>
+        <br/>
+        <form id ="hude"class="form-inline">
+            <label id ="hude"class="lead mr-2 ml-2" for="month">Jump To: </label>
+            <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                <option value=0>Jan</option>
+                <option value=1>Feb</option>
+                <option value=2>Mar</option>
+                <option value=3>Apr</option>
+                <option value=4>May</option>
+                <option value=5>Jun</option>
+                <option value=6>Jul</option>
+                <option value=7>Aug</option>
+                <option value=8>Sep</option>
+                <option value=9>Oct</option>
+                <option value=10>Nov</option>
+                <option value=11>Dec</option>
+            </select>
+
+
+            <label id ="hude"for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+            <option value=1990>1990</option>
+            <option value=1991>1991</option>
+            <option value=1992>1992</option>
+            <option value=1993>1993</option>
+            <option value=1994>1994</option>
+            <option value=1995>1995</option>
+            <option value=1996>1996</option>
+            <option value=1997>1997</option>
+            <option value=1998>1998</option>
+            <option value=1999>1999</option>
+            <option value=2000>2000</option>
+            <option value=2001>2001</option>
+            <option value=2002>2002</option>
+            <option value=2003>2003</option>
+            <option value=2004>2004</option>
+            <option value=2005>2005</option>
+            <option value=2006>2006</option>
+            <option value=2007>2007</option>
+            <option value=2008>2008</option>
+            <option value=2009>2009</option>
+            <option value=2010>2010</option>
+            <option value=2011>2011</option>
+            <option value=2012>2012</option>
+            <option value=2013>2013</option>
+            <option value=2014>2014</option>
+            <option value=2015>2015</option>
+            <option value=2016>2016</option>
+            <option value=2017>2017</option>
+            <option value=2018>2018</option>
+            <option value=2019>2019</option>
+            <option value=2020>2020</option>
+            <option value=2021>2021</option>
+            <option value=2022>2022</option>
+            <option value=2023>2023</option>
+            <option value=2024>2024</option>
+            <option value=2025>2025</option>
+            <option value=2026>2026</option>
+            <option value=2027>2027</option>
+            <option value=2028>2028</option>
+            <option value=2029>2029</option>
+            <option value=2030>2030</option>
+        </select></form>
+
+</div>
+
+
+<div id="tasks">
+<h2 id="tasktitle">Daily Tasks</h2>
+<form id="taskform">
+  <label for="Task_Name"><b>Task Name : </b></label>
+  <input type="text" placeholder="Task Name" name="Task_Name" id="targetname" required>
+  <br>
+  <label for="Type_Task"><b>Type of task : </b></label>
+  <select name="Type_Task" id="drop">
+  <option value="Hardware">HardWare</option>
+  <option value="Sofrware">SoftWare</option>
+  <option value="Design">Design</option>
+  <option value="Front End">Front End</option>
+  <option value="Back End">Back End</option>
+  <option value="UX">UX</option>
+  <option value="Testing">Testing</option>
+  <option value="Maintainance">Maintainance</option>
+  <option value="Private">Private</option>
+</select>
+<br>
+<label for="Time_Task"><b>Time of task : </b></label>
+<select name="Time_Task" id="time">
+<option value="7am">07:00</option>
+<option value="8am">08:00</option>
+<option value="9am">9:00</option>
+<option value="10am">10:00</option>
+<option value="11am">11:00</option>
+<option value="12am">12:00</option>
+<option value="1pm">13:00</option>
+<option value="2pm">14:00</option>
+<option value="3pm">15:00</option>
+<option value="4pm">16:00</option>
+<option value="5pm">17:00</option>
+<option value="6pm">18:00</option>
+<option value="7pm">19:00</option>
+</select>
+<br><br>
+<label for="Task_Descrip"><b>Task Description : </b></label>
+<textarea placeholder="Task Description" name="Task_Descrip" id="descrip" required></textarea>
+</form>
+<button id="add" onclick="addtasks()">Add task</button>
+<button id="add2" onclick="clearr()">Clear last task</button>
+
+</div>
+<div id="tasks2">
+  <h2 id="tasktitle">Daily Meetings</h2>
+  <form id="taskform2">
+    <label for="Task_Name"><b>Meeting Name : </b></label>
+    <input type="text" placeholder="Meeting Name" name="Task_Name" id="targetname2" required>
+    <br>
+    <label for="Type_Task"><b>Type of Meeting : </b></label>
+    <select name="Type_Task" id="drop2">
+    <option value="Hardware">HardWare</option>
+    <option value="Sofrware">SoftWare</option>
+    <option value="Design">Design</option>
+    <option value="Front End">Front End</option>
+    <option value="Back End">Back End</option>
+    <option value="UX">UX</option>
+    <option value="Testing">Testing</option>
+    <option value="Maintainance">Maintainance</option>
+    <option value="Meeting">Internal Meeting</option>
+    <option value="Private">Private</option>
+  </select>
+  <br>
+  <label for="Time_Task"><b>Time of meeting : </b></label>
+  <select name="Time_Task" id="time2">
+  <option value="7am">07:00</option>
+  <option value="8am">08:00</option>
+  <option value="9am">09:00</option>
+  <option value="10am">10:00</option>
+  <option value="11am">11:00</option>
+  <option value="12am">12:00</option>
+  <option value="1pm">13:00</option>
+  <option value="2pm">14:00</option>
+  <option value="3pm">15:00</option>
+  <option value="4pm">16:00</option>
+  <option value="5pm">17:00</option>
+  <option value="6pm">18:00</option>
+  <option value="7pm">19:00</option>
+  </select>
+  <br>
+  <label for="Meeting_loca"><b>Meeting location : </b></label>
+  <input type="text" placeholder="Meeting Location" name="Meeting+loca" id="loca2" required>
+  <br><br>
+  <label for="Task_Descrip"><b>Meeting Description : </b></label>
+  <textarea placeholder="Meeting Description" name="Task_Descrip" id="descript" required></textarea>
+  </form>
+  <button id="add" onclick="addmeeting()">Add Meeting</button>
+  <button id="add2" onclick="clearrr()">Clear last meeting</button>
+</div>
+<div id="tasks3">
+<h2 id="tasktitle">Welcome to your plan!</h2>
+<p id="welmsg">Welcome to your plan, the home for all your work planning needs!
+  <br></br>
+  Shown here is a dynamically updating calendar, the blue square shows what day it is!
+  Use this to keep track of what events you have each day.
+  <br></br>
+  Below is a list of all of the tasks and meetings you have input on the task page,
+  you can go back there now and add more if you want, don't worry they aren't going anywhere!
+</p>
+
+</div>
+
+</div><!-- End of main div -->
+
+
+<div id="footer">
+<div id="info">
+    <h2 id="tasktitle">Important!</h2>
+    <p id="welmsg">Your meetings and tasks will appear for you here!
+<br></br>
+    Becareful when deleting as they will delete from newest to old!
+    <br></br>
+    Press Delete to remove this message!
+      <p>
+  <button id="add3" onclick="remove()">Delete</button>
+</div>
+</div>
+
+</body>
+<script src="myscripts2.js"></script>
+</html>

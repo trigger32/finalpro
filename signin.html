@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planner</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="indexx.css">
+    <script type="text/javascript" src="myscripts.js">
+
+    </script>
+
+</head>
+
+<body>
+  <div id="header">
+  <h1 id= "welcome">Welcome to Planner!</h1>
+  </div>
+  <div id="wrap">
+    <div id="wraphead">
+    <h2 id= "signh">Join up here!</h2>
+    <h2 id= "signh2">Sign Up Now!</h2>
+    <h2 id= "signh3">Login In Now!</h2>
+</div>
+<div id="signform" class="animate">
+  <form id="signinform" onsubmit="return redirectMe();">
+    <h2 id="signpage">Create your account below</h2>
+    <br>
+    <label for="First_Name"><b>First Name : </b></label>
+    <input type="text" placeholder="first name" name="First_Name" id="targetname" required>
+    <br><br>
+    <label for="Sur_Name"><b>Surname : </b></label>
+    <input type="text" placeholder="surname" name="Sur_Name" id="targetname" required>
+    <br><br>
+    <label for="Email"><b>Email : </b></label>
+    <input type="email" placeholder="email" name="Email" id="mail" required>
+    <br><br>
+    <label for="Password"><b>Password : </b></label>
+    <input type="text" placeholder="password" name="password" id="password" required>
+    <br><br>
+    <label for="contact"><b>Contact Number : </b></label>
+    <input type="tel" placeholder="eg. 040 040 0404" name="contact" id="contact" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12" required>
+    <br><br>
+
+    <input type="submit" id="button5" onsubmit="runvalidation()">
+  </form>
+
+</div>
+<div id="signform2" class="animate">
+  <form id="loginform" onsubmit="return redirectMe()">
+    <h2 id="signpage2">Login using your account details here:</h2>
+    <br>
+    <label for="Task_Name"><b>First Name : </b></label>
+    <input type="text" placeholder="first name" name="First_Name" id="targetname" required>
+    <br><br>
+    <label for="Sur_Name"><b>Surname : </b></label>
+    <input type="text" placeholder="surname" name="Sur_Name" id="targetname" required>
+    <br><br>
+    <label for="Email"><b>Email : </b></label>
+    <input type="email" placeholder="email" name="Email" id="mail" required>
+    <br><br>
+    <label for="Password"><b>Password : </b></label>
+    <input type="password" placeholder="password" name="password" id="targetname" required>
+
+    <input type="submit" id="button4" >
+  </form>
+
+</div>
+
+<button id="button1" onclick="Login()">Login</button>
+<button id="button3" onclick="Signin()">Sign Up</button>
+<button id="button2" onclick="cancel()">Cancel</button>
+  </div>
+<div id="error">
+  <p>Incorrect User Login please re-enter details and try again!</p>
+</div>
+</body>
+
+</html>
